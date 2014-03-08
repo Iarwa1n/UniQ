@@ -2,7 +2,7 @@ UniQ
 
 ==========
 
-a simple node base service to generate unique identifiers safely.
+a simple node based service to generate unique identifiers safely.
 
 Installation:
 
@@ -16,5 +16,5 @@ Installation:
 Usage:
 
 send a http call to http://localhost:8080/<namespace> to retrieve a new unique identifier for the given namespace
-(namespaces can be added in the configuration. url and port can be change there too)
+(namespaces can be added in the configuration. the port can be change there too)
 You will get a json array with a new value or a json object with a 'error' key on failure.

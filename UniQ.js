@@ -1,6 +1,9 @@
 /**
  * Configuration area
  */
+//configure the port on the local machine to which the service shall listen too
+var port = 8080;
+
 var config = {
     storage_path : '/tmp/',
     namespaces:
@@ -8,18 +11,17 @@ var config = {
             'object1' : {prefix: 'o1_' , type: 'hash', 'length' : 20, postfix: '' },
             'object2' : {prefix: 'o2_' , type: 'hash', 'length' : 2, postfix: '_id' }
         },
-     
      }
 
 
 
+//========== DO not change anything from here on =============================
+
 var restify = require('restify');
 var fs = require('fs');
-var crypto = require('crypto');
-
 var server = restify.createServer({
-    name: 'myapp',
-    version: '1.0.0'
+    name: 'UniQ',
+    version: '0.0.1'
 });
 
 var IdentifierGenerator = function(config)
@@ -181,6 +183,6 @@ server.get('/:namespace', function(req, res, next) {
 });
 
 
-server.listen(8080, function () {
+server.listen(port, function () {
     console.log('%s listening at %s', server.name, server.url);
 });
